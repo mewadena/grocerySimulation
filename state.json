@@ -1,0 +1,46 @@
+{
+  "clock": 484,
+  "totalTime": 480,
+  "storeTime": "16:04",
+  "storeOpen": false,
+  "stats": {
+    "arrived": 252,
+    "served": 250,
+    "balked": 0,
+    "reneged": 1,
+    "avgWait": 0.5
+  },
+  "queues": [
+    {
+      "id": 1,
+      "size": 0,
+      "maxSize": 5,
+      "customers": []
+    },
+    {
+      "id": 2,
+      "size": 0,
+      "maxSize": 5,
+      "customers": []
+    },
+    {
+      "id": 3,
+      "size": 0,
+      "maxSize": 5,
+      "customers": []
+    },
+    {
+      "id": 4,
+      "size": 1,
+      "maxSize": 5,
+      "customers": [{"id": 251, "serviceLeft": 1, "waitTime": 0, "patience": 9}]
+    },
+    {
+      "id": 5,
+      "size": 0,
+      "maxSize": 5,
+      "customers": []
+    }
+  ],
+  "finished": false
+}
