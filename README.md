@@ -33,7 +33,7 @@ gcc grocery_simulation_json.c -o grocery_simulation_json.exe
 Run:
 
 ```
-grocery_simulation_json.exe
+./grocery_simulation_json.exe
 ```
 
 The program will ask for:
