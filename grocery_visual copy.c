@@ -871,7 +871,7 @@ static void draw_stat_panel(void) {
 
     lineRGBA(renderer, x0, y, x0+panW, y, 40,55,90,255);
     y += 14;
-    draw_text("Queue depths", x0, y, font_tiny,
+    draw_text("Cashier Load", x0, y, font_tiny,
               (SDL_Color){COL_TEXT_DIM,255}, false);
     y += 18;
     int bw = panW / NUM_QUEUES - 4;

@@ -363,16 +363,27 @@ void draw_screen(Queue queues[], int clock, int store_open) {
         /* customer IDs — front is cyan (being served), rest white */
         Customer* cur = queues[i].front;
         int count = 0;
+        int cust_chars = 0;
         while (cur != NULL && count < 7) {
             if (count == 0) { set_colour(CLR_CYAN);  printf("[C%03d]", cur->id); }
             else            { set_colour(CLR_WHITE); printf("[C%03d]", cur->id); }
+            cust_chars += 6;
             cur = cur->next;
             count++;
         }
-        if (queues[i].size > 7) { set_colour(CLR_YELLOW); printf("+%d", queues[i].size - 7); }
-        if (queues[i].size == 0){ set_colour(CLR_DARK_GREY); printf("(empty)              "); }
+        if (queues[i].size > 7) {
+            set_colour(CLR_YELLOW); printf("+%d", queues[i].size - 7);
+            cust_chars += 3;
+        }
+        if (queues[i].size == 0) {
+            set_colour(CLR_DARK_GREY); printf("(empty)              ");
+            cust_chars = 22;
+        }
 
-        set_colour(CLR_WHITE); printf("         ");
+        /* Pad to maximum customer area width (45 = 7*6 + 3 overflow)
+           to clear any ghost characters from previous longer display */
+        set_colour(CLR_WHITE);
+        if (cust_chars < 45) printf("%*s", 45 - cust_chars, "");
         reset_colour();
     }
 
